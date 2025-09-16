@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="Assets/css/style.css">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Seans Test</h1>
+  
+    <!-- create the quiz container-->
+
+    <div class = "quiz-container">
+        <h1>Trivia quiz</h1>
+
+       <!--create  the timer -->
+        <div class = "timer">Time left:10 seconds</div>
+
+     <!--create the question -->
+        <h2 class = "question"> </h2>
+
+      <!-- create the options -->
+    <div class="options">
+       <!-- To display the questions from array using javascript this button class has now been disabled to avoid repetition of code:see const createQuestion = () => {
+        
+       <button class="option correct">Jane Austen</button>
+        <button class="option incorrect">Charlotte Bronte</button>
+        <button class="option">Emily Bronte</button>    
+        <button class="option">Mary Shelley</button>   -->    
+    </div>           
+                
+
+               <!--create the next button -->
+                <button class="next-button">Next</button>
+    </div>
+   
+    <!--create the result container -->
+    <div class="quiz-result">
+        <h2>You scored 3 out of 5.</h2>
+       
+        <div class="question-container incorrect">
+        <div class="question">Who wrote the novel 'Pride and Prejudice?</div>
+        <!-- Message for user answer with no answer-->
+        <div class="user-answer">Your Answer : Not answered</div>
+
+        <!-- Message for user answer with correct answer-->
+        <div class="correct-answer">Correct Answer: correct answer</div> 
+        </div>
+
+        <!-- create the question container for other questions -->
+        <div class="question-container">
+        <div class="question">Who wrote the novel 'Pride and Prejudice?</div>
+        <div class="user-answer">Your Answer : Not Answered</div>
+        <div class="correct-answer">Correct Answer: correct answer</div>
+        </div>
+
+        <div class="question-container">
+        <div class="question">Who wrote the novel 'Pride and Prejudice?</div>
+        <div class="user-answer">Your Answer : Not Answered</div>
+        <div class="correct-answer">Correct Answer: correct answer</div>
+        </div>
+
+        <div class="question-container">
+        <div class="question">Who wrote the novel 'Pride and Prejudice?</div>
+        <div class="user-answer">Your Answer : Not Answered</div>
+        <div class="correct-answer">Correct Answer: correct answer</div>
+        </div>                      
+
+        <div class="question-container">
+        <div class="question">Who wrote the novel 'Pride and Prejudice?</div>
+        <div class="user-answer">Your Answer : Not Answered</div>
+        <div class="correct-answer">Correct Answer: correct answer</div>
+        </div>
+
+        <!-- create the retake button -->
+        <button class="retake-button">Retake-Quiz </button> 
+
+
+    </div>    
+                
+            
+    <script src="Assets/js/script.js"></script>
 </body>
 </html>
