@@ -1,0 +1,135 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"); 
+
+/* Asterisk wildcard selector to overide default styles added by the browser */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Styling for the body */
+.quiz-container {
+    font-family: "Roborto",sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+     /*display: none; */    /* to display the quiz screen remove display :none*/
+     
+    }
+
+/* Styling for the timer */
+.timer {
+    font-weight: bold;
+    text-align: right;
+    font-size: 20px;
+    margin-bottom: 20px;
+    
+}
+/* Styling for the timer when time is running out */
+.timer.danger {
+    color: red;
+}
+/* Styling for the question */
+.quiz-container h2.question {
+    font-size: 24px;
+    background: #d0ecff;
+    padding: 16px;
+  border-radius: 8px;
+  font-weight: normal;
+  line-height: 1.6; 
+}
+/* Styling for the options container */
+.quiz-container .options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+    list-style: none;
+    margin-top: 20px;
+}
+/* Styling for each option button */
+.quiz-container .option  {
+    font-size: 18px;
+    background : #1d3557;
+    color : white ;    
+    padding : 24px 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    
+}
+
+/* Change cursor to pointer when hovering over buttons */
+.quiz.container.buttons {
+    cursor: pointer;
+}
+/* Disable pointer event when one of the option is selected */
+.disabled {
+    pointer-events: none;
+}
+/* Change background color when hovering over option buttons */
+.quiz-container .option:hover {
+    background: #457b9d;
+}   
+/* Styling for the correct answer */
+.option.correct {
+    background: green;
+    color: white;
+}
+.option.incorrect    {
+    background: red;
+    color: white;
+}
+/* Styling for the next and retake button */
+
+.quiz-container .next-button,
+ .quiz-result .retake-button {
+    background: #0f1c2e; ;
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 3px;
+    cursor: pointer;
+    width:it-content
+} 
+
+
+/* styling for quiz-result*/
+.quiz-result {
+    display: none;  /* to display the quiz  screen change  display : from flex to none */
+    flex-direction: column;
+    gap: 24px;
+    font-family: "Roboto", sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.quiz-result .question-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border: 8px solid #eee;    
+}
+
+.quiz-result .question-container.incorrect{
+    background-color: #e63c3c;
+    text-color: white;
+}
+
+.question-number {
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 16px;
+    background-color: rgb(226, 219, 242);
+    color:black;
+    padding: 4px 8px;
+    border-radius: 8px;
+}
