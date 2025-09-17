@@ -68,10 +68,7 @@
 .disabled {
     pointer-events: none;
 }
-/* Change background color when hovering over option buttons */
-.quiz-container .option:hover {
-    background: #457b9d;
-}   
+
 /* Styling for the correct answer */
 .option.correct {
     background: green;

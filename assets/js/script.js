@@ -115,15 +115,22 @@ const createQuestion = () => {
         option.addEventListener("click", (e) => {
             checkAnswer(e);
         });
-        option.addEventListener("click", function() {
-            if (o === quizData[currentIndex].correct) {
-                option.classList.add("correct");
-            } else {
-                option.classList.add("incorrect");
-            }
-            // Optionally, disable all buttons after selection
-            Array.from(options.children).forEach(btn => btn.disabled = true);
-        });
+            option.addEventListener("click", function() {
+                // Compare trimmed values to avoid whitespace issues
+                if (o.trim() === quizData[currentIndex].correct.trim()) {
+                    option.classList.add("correct");
+                } else {
+                    option.classList.add("incorrect");
+                    // Find and highlight the correct answer button
+                    Array.from(options.children).forEach(btn => {
+                        if (btn.textContent.trim() === quizData[currentIndex].correct.trim()) {
+                            btn.classList.add("correct");
+                        }
+                    });
+                }
+                // Optionally, disable all buttons after selection
+                Array.from(options.children).forEach(btn => btn.disabled = true);
+            });
         options.appendChild(option);
     });
 };
