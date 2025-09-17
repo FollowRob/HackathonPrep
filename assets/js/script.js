@@ -64,6 +64,10 @@ const question = document.querySelector(".quiz-container .question");
 const options = document.querySelector(".quiz-container .options");
 const nextButton = document.querySelector(".quiz-container .next-button");
 const quizResult = document.querySelector(".quiz-result");
+const retakeQuizButton = document.querySelector(".quiz-result .retake-button");
+if (retakeQuizButton) {
+    retakeQuizButton.addEventListener("click", setupQuiz);
+}
 
 // Variable to track the current question number from the above array
 let questionNumber = 0;
@@ -130,10 +134,15 @@ const createQuestion = () => {
 
 // Function to display quiz results
 const displayquizResult = () => {
-    quizContainer.style.display = "none";
-    quizResult.style.display = "flex";
-  
+    window.location.href = "results.html";
 }
+
+function setupQuiz() {
+    score = 0;
+    questionNumber = 0;
+    window.location.href = "index.html";
+}
+
 createQuestion();
 
 //On last question, show results
@@ -151,7 +160,7 @@ const displayNextQuestion = () => {
     
 
 };
-nextButton.addEventListener("click", displayNextQuestion )
+nextButton.addEventListener("click", displayNextQuestion);
 
 
 
