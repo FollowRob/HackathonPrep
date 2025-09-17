@@ -95,30 +95,28 @@ const checkAnswer = (e) => {
 };
 
 const createQuestion = () => {
-    // Pick a random question index
-    const randomIndex = Math.floor(Math.random() * quizData.length);
-    
+    // Ask questions in order
+    const currentIndex = questionNumber;
 
     // Clear previous options
     options.innerHTML = "";
 
     // Set the question text
-    question.innerHTML = `<span class = "question-number"> ${questionNumber + 1}/${MAX_QUESTION}   </span>${quizData[randomIndex].question}`;
-    
-    
-    const shuffledOptions = [...quizData[randomIndex].options];
-        shuffleArray(shuffledOptions);
+    question.innerHTML = `<span class = "question-number"> ${questionNumber + 1}/${MAX_QUESTION}   </span>${quizData[currentIndex].question}`;
+
+    const shuffledOptions = [...quizData[currentIndex].options];
+    shuffleArray(shuffledOptions);
     shuffledOptions.forEach((o) => {
         const option = document.createElement("button");
         option.classList.add("option");
         option.innerHTML = o;
 
         // create event listener for each option i.e color of the option button changes based on correct or incorrect answer selected
-       option.addEventListener("click", (e) => {
-            checkAnswer(e);      
-                  });
-                  option.addEventListener("click", function() {
-            if (o === quizData[randomIndex].correct) {
+        option.addEventListener("click", (e) => {
+            checkAnswer(e);
+        });
+        option.addEventListener("click", function() {
+            if (o === quizData[currentIndex].correct) {
                 option.classList.add("correct");
             } else {
                 option.classList.add("incorrect");
@@ -126,10 +124,8 @@ const createQuestion = () => {
             // Optionally, disable all buttons after selection
             Array.from(options.children).forEach(btn => btn.disabled = true);
         });
-                  // Optionally, disable all buttons after selection
         options.appendChild(option);
     });
-    
 };
 
 // Function to display quiz results
@@ -144,10 +140,6 @@ function setupQuiz() {
 }
 
 createQuestion();
-
-//On last question, show results
-
-
 
 const displayNextQuestion = () => {
      if (questionNumber >= MAX_QUESTION-1) {
